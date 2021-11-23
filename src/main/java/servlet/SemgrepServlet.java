@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.owasp.encoder.*;
 
 /**
  * Servlet implementation class SemgrepServlet
@@ -25,10 +26,14 @@ public class SemgrepServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	
-    	String email = request.getParameter("txtEmail");
-    	String password = request.getParameter("txtPassword");
-    	
-    	// Eliminamos los comentarios 
+    	// Esto esta mal XSS  
+    	String search = request.getParameter("inputSearch"); 
+    	response.getWriter().write(search); 
+    	// response.getWriter().write(Encode.forHtml(search)); 
+
+    	// Esto sigue mal XSS  
+    	// PrintWriter writer = response.getWriter(); 
+    	// writer.write(search);
     }
 
 	/**
