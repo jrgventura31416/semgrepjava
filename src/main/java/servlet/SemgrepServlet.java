@@ -28,8 +28,7 @@ public class SemgrepServlet extends HttpServlet {
     	
     	// Esto esta mal XSS  
     	String search = request.getParameter("inputSearch"); 
-    	response.getWriter().write(search); 
-    	// response.getWriter().write(Encode.forHtml(search)); 
+    	response.getWriter().write(Encode.forHtml(search)); 
 
     	// Esto sigue mal XSS  
     	// PrintWriter writer = response.getWriter(); 
