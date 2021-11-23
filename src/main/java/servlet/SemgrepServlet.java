@@ -28,8 +28,7 @@ public class SemgrepServlet extends HttpServlet {
     	String email = request.getParameter("txtEmail");
     	String password = request.getParameter("txtPassword");
     	
-    	System.out.print(email);
-    	System.out.println(email);
+    	// Eliminamos los comentarios 
     }
 
 	/**
