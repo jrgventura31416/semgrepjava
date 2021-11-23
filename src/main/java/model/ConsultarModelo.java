@@ -17,19 +17,4 @@ public class ConsultarModelo {
 		return true;
 	}
 	
-	private boolean buscarLibroCorrectamente(String nombre) {
-		String query = "Select id, name, isbn, autor from libros where name = ?";
-		
-		Connection cn = null;
-		
-		try {
-			
-			PreparedStatement psm = cn.prepareStatement(query);
-			psm.setString(1, nombre);
-			
-		} catch (SQLException e) {}
-		
-		return true;
-	}
-	
 }
